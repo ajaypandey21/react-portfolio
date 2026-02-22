@@ -16,29 +16,45 @@ export interface ExperienceEntry {
 export const experienceData: ExperienceEntry[] = [
   {
     id: "1",
-    role: "Full Stack Developer",
-    company: "Freelance",
-    location: "Remote",
-    period: "2022 – Present",
+    role: "Web Developer",
+    company: "Codenia Technologies LLP",
+    location: "Noida, Uttar Pradesh",
+    period: "Feb 2025 – Present",
     description:
-      "Building and delivering full-stack applications for international clients with focus on scalability and clean architecture.",
+      "Delivered MyBildr HRMS portal and SupplyBase eCommerce platform. Built scalable architecture and handled complex async flows.",
     highlights: [
-      "Delivered production apps using MERN stack",
-      "Collaborated with clients across time zones",
-      "Implemented CI/CD and cloud deployments",
+      "Delivered MyBildr HRMS portal using React.js, Redux Toolkit (Saga), NestJS, and PostgreSQL",
+      "Built SupplyBase eCommerce platform (Next.js, Redux Toolkit, Tailwind CSS) with dynamic product listing, token-based auth, and API-driven cart",
+      "Integrated QR-based worker onboarding with 11 dynamic forms including file/media uploads",
+      "Implemented AWS-based storage and PayPal payment integration",
+      "Implemented CI/CD pipelines and deployed on AWS Linux server",
     ],
   },
   {
     id: "2",
-    role: "Placeholder Role",
-    company: "Placeholder Company",
-    location: "City, Country",
-    period: "YYYY – YYYY",
+    role: "Freelance Software Developer",
+    company: "Freelance",
+    location: "Remote",
+    period: "Sep 2024 – Jan 2025",
     description:
-      "Short description of responsibilities and impact. Replace with your real experience.",
+      "Built full-stack applications with complex workflows, secure REST APIs, and scalable architecture.",
     highlights: [
-      "Key achievement or responsibility",
-      "Another highlight",
+      "Built Form Chaining Mailing Application (React, Node.js, Express) with complex workflows and secure REST APIs",
+      "Developed Digital Asset Management system with multimedia handling and optimized blob responses",
+      "Implemented Redux-based state management with scalable architecture",
+    ],
+  },
+  {
+    id: "3",
+    role: "Software Developer Intern",
+    company: "LCNC Technologies Pvt. Ltd.",
+    location: "Noida",
+    period: "Jan 2024 – Jul 2024",
+    description:
+      "Contributed to DrapCode low-code platform with backend and feature development.",
+    highlights: [
+      "Built Collection Snapshot feature for one-click NoSQL backup/restore using Redis caching",
+      "Developed Delete Permission toggle feature for secure module control",
     ],
   },
 ];
