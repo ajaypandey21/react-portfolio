@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-const nodemailer = require("nodemailer");
+const { Resend } = require("resend");
 
 const app = express();
 
@@ -29,29 +29,19 @@ app.post("/api/contact", async (req, res) => {
       .json({ ok: false, error: "Missing name, email, or message." });
   }
 
-  if (
-    !process.env.SMTP_HOST ||
-    !process.env.SMTP_USER ||
-    !process.env.SMTP_PASS
-  ) {
+  if (!process.env.RESEND_API_KEY || !process.env.MAIL_TO) {
     return res
       .status(500)
-      .json({ ok: false, error: "Email service is not configured." });
+      .json({ ok: false, error: "Email service is not fully configured. Missing API key or MAIL_TO." });
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to = process.env.MAIL_TO || process.env.SMTP_USER;
-    const from = process.env.MAIL_FROM || process.env.SMTP_USER;
+    const to = process.env.MAIL_TO;
+    const from = process.env.MAIL_FROM || "onboarding@resend.dev";
 
-    await transporter.sendMail({
+    const { data, error } = await resend.emails.send({
       from,
       to,
       replyTo: email,
@@ -61,6 +51,12 @@ app.post("/api/contact", async (req, res) => {
              <p><strong>Email:</strong> ${email}</p>
              <p>${String(message).replace(/\n/g, "<br/>")}</p>`,
     });
+
+    if (error) {
+      // eslint-disable-next-line no-console
+      console.error("Resend API error:", error);
+      return res.status(500).json({ ok: false, error: "Failed to send email." });
+    }
 
     return res.json({ ok: true });
   } catch (error) {
