@@ -2,8 +2,8 @@ import { Github, Linkedin } from "lucide-react";
 import { MainLayout } from "../layouts/MainLayout";
 
 /** Update these to your profiles */
-const GITHUB_URL = "https://github.com";
-const LINKEDIN_URL = "https://linkedin.com";
+const GITHUB_URL = "https://github.com/ajaypandey21";
+const LINKEDIN_URL = "https://www.linkedin.com/in/ajaypandey21/";
 
 export function Footer() {
   return (
