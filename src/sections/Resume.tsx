@@ -30,9 +30,6 @@ export function Resume() {
             <FileDown size={18} />
             Download Resume
           </a>
-          <p className="mt-3 text-xs text-zinc-500">
-            Place your resume PDF in <code className="text-zinc-600">public/resume.pdf</code> or update <code className="text-zinc-600">RESUME_URL</code> in this section.
-          </p>
         </motion.div>
       </MainLayout>
     </section>

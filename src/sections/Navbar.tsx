@@ -19,6 +19,21 @@ export function Navbar() {
   const scrollY = useScrollPosition();
   const scrolled = scrollY > 24;
 
+  /** Closing the drawer reflows the page and can cancel native hash scrolling on mobile. */
+  const handleMobileNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    event.preventDefault();
+    setMobileOpen(false);
+    window.setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 280);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -77,7 +92,7 @@ export function Navbar() {
                   <a
                     href={href}
                     className="block py-2 text-zinc-400 hover:text-zinc-100"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleMobileNavClick(e, href)}
                   >
                     {label}
                   </a>

@@ -46,7 +46,10 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-24">
       <MainLayout>
-        <SectionHeading title="Contact" subtitle="Get in touch" />
+        <SectionHeading
+          title="Contact"
+          subtitle="Have a project in mind or want to discuss something over coffee? Reach out here."
+        />
         <motion.div
           className="mx-auto max-w-lg rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 sm:p-8 backdrop-blur-sm"
           initial={{ opacity: 0, y: 16 }}
