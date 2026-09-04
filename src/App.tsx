@@ -3,10 +3,8 @@ import {
   Hero,
   About,
   Experience,
-  Skills,
   Projects,
-  DevOps,
-  Resume,
+  Skills,
   Contact,
   Footer,
 } from "./sections";
@@ -19,10 +17,8 @@ function App() {
         <Hero />
         <About />
         <Experience />
-        <Skills />
         <Projects />
-        <DevOps />
-        <Resume />
+        <Skills />
         <Contact />
         <Footer />
       </main>

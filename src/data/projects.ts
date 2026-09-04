@@ -10,40 +10,46 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
-  /** Optional image path or URL */
-  image?: string;
+  featured?: boolean;
+  tag?: string;
 }
 
 export const projectsData: Project[] = [
   {
     id: "1",
-    title: "MyBildr – HRMS Portal",
+    title: "SupplyBase",
+    tag: "E-commerce",
+    featured: true,
     description:
-      "HRMS portal with QR-based worker onboarding, 11 dynamic forms with file uploads, AWS media storage, and complex async state management.",
-    techStack: ["React.js", "Redux Toolkit (Saga)", "NestJS", "PostgreSQL", "AWS", "PayPal"],
-    liveUrl: "https://mybildr.com",
-  },
-  {
-    id: "2",
-    title: "SupplyBase – eCommerce Platform",
-    description:
-      "eCommerce platform with dynamic product listing and filtering, token-based authentication, API-driven cart management, and scalable frontend architecture.",
-    techStack: ["Next.js", "Redux Toolkit (Thunk)", "Tailwind CSS", "REST APIs"],
+      "UK construction-supplies store. Auth, coupon engine, checkout, admin, payments — plus SEO and Core Web Vitals work that improved search visibility.",
+    techStack: ["Next.js", "React", "Node.js", "MongoDB", "PostgreSQL", "AWS"],
     liveUrl: "https://supplybase.co.uk",
   },
   {
-    id: "3",
-    title: "Digital Asset Management System",
+    id: "2",
+    title: "MyBildr",
+    tag: "HRMS",
+    featured: true,
     description:
-      "Multimedia file handling with optimized blob response handling and scalable frontend architecture.",
-    techStack: ["React", "Tailwind CSS", "Redux", "REST APIs"],
+      "HRMS portal with admin-configurable 11-step onboarding, conditional logic, secure APIs, file management, and AWS deployment.",
+    techStack: ["Next.js", "React", "NestJS", "PostgreSQL", "AWS"],
+    liveUrl: "https://mybildr.com",
+  },
+  {
+    id: "3",
+    title: "DrapCode",
+    tag: "Low-code",
+    description:
+      "Low-code platform work: Collection Snapshot (NoSQL backup/restore with Redis) and a Delete Permission control for secure module access.",
+    techStack: ["React", "Node.js", "Redis", "NoSQL"],
+    liveUrl: "https://drapcode.com",
   },
   {
     id: "4",
-    title: "DrapCode – Low-code Platform",
+    title: "LovesGoals",
+    tag: "Product",
     description:
-      "Contributed to DrapCode low-code platform; built Collection Snapshot (NoSQL backup/restore with Redis) and Delete Permission toggle.",
-    techStack: ["React", "Node.js", "Redis", "NoSQL"],
-    liveUrl: "https://drapcode.com",
+      "Wedding e-invitation platform with multi-step guest forms, admin-configurable event settings, and guest-response export.",
+    techStack: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS"],
   },
 ];

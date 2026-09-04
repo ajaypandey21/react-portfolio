@@ -1,7 +1,6 @@
 /**
  * Skills data by category.
- * Icons are real brand logos from Simple Icons (cdn.simpleicons.org).
- * Use the exact slug from https://simpleicons.org (e.g. "react", "amazonaws").
+ * Icons are Simple Icons slugs, served through Iconify (see SkillIcon).
  */
 
 export type SkillCategory = "Frontend" | "Backend" | "DevOps" | "Tools";
@@ -51,7 +50,7 @@ export const skillsData: SkillItem[] = [
   { id: "tools-1", name: "Git", category: "Tools", icon: "git" },
   { id: "tools-2", name: "GitHub", category: "Tools", icon: "github" },
   { id: "tools-3", name: "Linux", category: "Tools", icon: "linux" },
-  { id: "tools-4", name: "VS Code", category: "Tools", icon: "vscode" },
+  { id: "tools-4", name: "VS Code", category: "Tools", icon: "visualstudiocode" },
   { id: "tools-5", name: "Postman", category: "Tools", icon: "postman" },
 ];
 

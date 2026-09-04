@@ -1,38 +1,16 @@
-import { Github, Linkedin } from "lucide-react";
 import { MainLayout } from "../layouts/MainLayout";
-
-/** Update these to your profiles */
-const GITHUB_URL = "https://github.com/ajaypandey21";
-const LINKEDIN_URL = "https://www.linkedin.com/in/ajaypandey21/";
+import { SocialLinks } from "../components/SocialLinks";
+import { site } from "../data/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-zinc-800 py-8">
       <MainLayout>
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-zinc-500">
-            © {new Date().getFullYear()} Ajay Pandey. Ghaziabad, India.
+          <p className="text-sm text-zinc-600">
+            © {new Date().getFullYear()} {site.name}
           </p>
-          <div className="flex items-center gap-4">
-            <a
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-300 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-300 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-          </div>
+          <SocialLinks />
         </div>
       </MainLayout>
     </footer>

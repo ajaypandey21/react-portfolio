@@ -4,7 +4,5 @@ export { About } from "./About";
 export { Experience } from "./Experience";
 export { Skills } from "./Skills";
 export { Projects } from "./Projects";
-export { DevOps } from "./DevOps";
-export { Resume } from "./Resume";
 export { Contact } from "./Contact";
 export { Footer } from "./Footer";
